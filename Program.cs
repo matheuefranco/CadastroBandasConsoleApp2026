@@ -134,7 +134,7 @@ class Program
                 return true;
             }
         }
-        return false
+        return false;
     }
 
 
@@ -148,6 +148,7 @@ class Program
         Console.WriteLine("2 - Mostrar Bandas");
         Console.WriteLine("3 - Buscar Banda");
         Console.WriteLine("4 - Atualizar Banda");
+        Console.WriteLine("5 - Remover Banda");
         Console.WriteLine("0 - Sair");
         Console.Write("Escolha uma opção: ");
         return int.Parse(Console.ReadLine());
@@ -176,6 +177,13 @@ class Program
                         retorno = atualizarBanda(listaBandas,nomeDeBusca);
                         if (retorno == false)
                              Console.WriteLine("Banda não encontrada");
+                    break;
+                case 5:
+                    Console.Write("Nome da banda para remover:");
+                    nomeDeBusca = Console.ReadLine();
+                    retorno = removerBanda(listaBandas, nomeDeBusca);
+                    if (retorno == false)
+                        Console.WriteLine("Banda não encontrada");
                     break;
                 case 0: Console.WriteLine("Saindo...");
                     salvarDados(listaBandas, "bandas.txt");
